@@ -2,15 +2,15 @@ package com.example.moviesapp.route
 
 import java.lang.IllegalArgumentException
 
-enum class MovieScreens  {
-    DetailsScreen,
-    HomeScreen;
+enum class MovieScreens {
+    HomeScreen,
+    DetailsScreen;
 
-    companion object  {
-        fun fromRoute(route: String?): MovieScreens = when (route?.substringBefore(delimiter = "/")) {
+    companion object {
+        fun fromRoute(route: String?): MovieScreens = when (route?.substringBefore("/")) {
             HomeScreen.name -> HomeScreen
             DetailsScreen.name -> DetailsScreen
-            else -> throw  IllegalArgumentException("Route $route is not regonizable")
+            else -> throw IllegalArgumentException("Route  $route is not regonizable")
         }
     }
 
